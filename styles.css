@@ -1,0 +1,1341 @@
+/* ==========================================
+   BATIXPERT SOLUTIONS
+   styles.css
+   Partie 1 - Base, Header, Navigation, Hero
+========================================== */
+
+/* ---------- RESET ---------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f8f9fb;
+    color:#333;
+    line-height:1.7;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+/* ---------- VARIABLES ---------- */
+
+:root{
+
+    --primary:#163a63;
+    --secondary:#244d7a;
+    --accent:#d4a017;
+
+    --white:#ffffff;
+
+    --dark:#1d1d1d;
+
+    --light:#f5f7fa;
+
+    --text:#555;
+
+    --radius:18px;
+
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+
+    --transition:.35s;
+
+    --max-width:1200px;
+
+}
+
+/* ---------- CONTAINER ---------- */
+
+.container{
+
+    width:min(92%,var(--max-width));
+
+    margin:auto;
+
+}
+
+/* ---------- HEADER ---------- */
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    background:rgba(255,255,255,.97);
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+    z-index:1000;
+
+}
+
+.navbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    min-height:80px;
+
+}
+
+/* ---------- LOGO ---------- */
+
+.logo{
+
+    display:flex;
+
+    flex-direction:column;
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    line-height:1.1;
+
+}
+
+.logo span{
+
+    font-size:1.6rem;
+
+}
+
+.logo small{
+
+    color:var(--accent);
+
+    font-size:.85rem;
+
+    letter-spacing:1px;
+
+}
+
+/* ---------- MENU ---------- */
+
+.menu{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:32px;
+
+}
+
+.menu a{
+
+    color:var(--dark);
+
+    font-weight:500;
+
+    transition:var(--transition);
+
+    position:relative;
+
+}
+
+.menu a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--accent);
+
+    transition:var(--transition);
+
+}
+
+.menu a:hover::after,
+.menu a.active::after{
+
+    width:100%;
+
+}
+
+.menu a:hover,
+.menu a.active{
+
+    color:var(--primary);
+
+}
+
+/* ---------- BURGER ---------- */
+
+.burger{
+
+    display:none;
+
+    cursor:pointer;
+
+}
+
+.burger span{
+
+    display:block;
+
+    width:28px;
+
+    height:3px;
+
+    margin:6px 0;
+
+    background:var(--primary);
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+/* ---------- BOUTONS ---------- */
+
+.btn{
+
+    display:inline-block;
+
+    padding:15px 32px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.btn-primary{
+
+    background:var(--accent);
+
+    color:#fff;
+
+}
+
+.btn-primary:hover{
+
+    background:#b7860f;
+
+    transform:translateY(-3px);
+
+}
+
+.btn-secondary{
+
+    border:2px solid var(--primary);
+
+    color:var(--primary);
+
+}
+
+.btn-secondary:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+
+    padding:170px 0 110px;
+
+    background:linear-gradient(135deg,#f9fbfd,#eef3f8);
+
+}
+
+.hero-content{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:70px;
+
+}
+
+.hero-text h1{
+
+    font-size:3.2rem;
+
+    line-height:1.2;
+
+    color:var(--primary);
+
+    margin-bottom:25px;
+
+}
+
+.hero-text p{
+
+    color:var(--text);
+
+    font-size:1.1rem;
+
+    margin-bottom:35px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+.hero-image img{
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow);
+
+}
+
+/* ---------- PAGE HERO ---------- */
+
+.page-hero{
+
+    padding:160px 0 90px;
+
+    text-align:center;
+
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+
+    color:#fff;
+
+}
+
+.page-hero h1{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+}
+
+.page-hero p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    opacity:.95;
+
+}
+
+/* ---------- SECTIONS ---------- */
+
+section{
+
+    padding:100px 0;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.section-title h2{
+
+    color:var(--primary);
+
+    font-size:2.4rem;
+
+    margin-bottom:15px;
+
+}
+
+.section-title p{
+
+    max-width:750px;
+
+    margin:auto;
+
+    color:var(--text);
+
+}
+/* ==========================================
+   BATIXPERT SOLUTIONS
+   styles.css
+   Partie 2 - Cartes, Services, Offres, About
+========================================== */
+
+/* ---------- PRESENTATION ---------- */
+
+.presentation{
+
+    background:#ffffff;
+
+}
+
+.presentation-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+/* ---------- CARTES ---------- */
+
+.card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+    border:1px solid rgba(0,0,0,.05);
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+}
+
+.card-icon{
+
+    width:80px;
+
+    height:80px;
+
+    margin:0 auto 25px;
+
+    border-radius:50%;
+
+    background:rgba(212,160,23,.12);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:2rem;
+
+}
+
+.card h3{
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+    font-size:1.35rem;
+
+}
+
+.card p{
+
+    color:var(--text);
+
+}
+
+/* ---------- SERVICES ---------- */
+
+.services{
+
+    background:var(--light);
+
+}
+
+.services-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+
+}
+
+.service-card{
+
+    background:#fff;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+    border-left:6px solid var(--accent);
+
+}
+
+.service-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.service-card h3{
+
+    color:var(--primary);
+
+    margin-bottom:18px;
+
+    font-size:1.35rem;
+
+}
+
+.service-card p{
+
+    color:var(--text);
+
+}
+
+/* ---------- OFFRES ---------- */
+
+.pricing{
+
+    background:#fff;
+
+}
+
+.pricing-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+}
+
+.pricing article{
+
+    background:#fff;
+
+    padding:45px 35px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+    border:2px solid transparent;
+
+}
+
+.pricing article:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--accent);
+
+}
+
+.pricing h3{
+
+    color:var(--primary);
+
+    font-size:1.6rem;
+
+    margin-bottom:20px;
+
+}
+
+.price{
+
+    font-size:2.3rem;
+
+    font-weight:700;
+
+    color:var(--accent);
+
+    margin-bottom:25px;
+
+}
+
+.pricing article p{
+
+    margin:15px 0;
+
+    color:var(--text);
+
+}
+
+.pricing article .btn{
+
+    margin-top:20px;
+
+}
+
+/* ---------- OFFRE VEDETTE ---------- */
+
+.featured{
+
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+
+    color:#fff;
+
+    transform:scale(1.03);
+
+}
+
+.featured h3{
+
+    color:#fff;
+
+}
+
+.featured p{
+
+    color:#f5f5f5;
+
+}
+
+.featured .price{
+
+    color:#ffd45d;
+
+}
+
+.featured .btn-primary{
+
+    background:#fff;
+
+    color:var(--primary);
+
+}
+
+.featured .btn-primary:hover{
+
+    background:#f0f0f0;
+
+}
+
+/* ---------- A PROPOS ---------- */
+
+.about{
+
+    background:#fff;
+
+}
+
+.about-content{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:40px;
+
+}
+
+.about-text{
+
+    background:#fff;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.about-text p{
+
+    color:var(--text);
+
+    margin-bottom:20px;
+
+}
+
+.about-text p:last-child{
+
+    margin-bottom:0;
+
+}
+/* ==========================================
+   BATIXPERT SOLUTIONS
+   styles.css
+   Partie 3 - Étapes, Contact, CTA, Footer
+========================================== */
+
+/* ---------- COMMENT ÇA MARCHE ---------- */
+
+.steps{
+
+    background:var(--light);
+
+}
+
+.steps-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+
+}
+
+.steps-grid div{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.steps-grid div:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.steps-grid span{
+
+    width:70px;
+
+    height:70px;
+
+    margin:0 auto 25px;
+
+    border-radius:50%;
+
+    background:var(--accent);
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:1.7rem;
+
+    font-weight:700;
+
+}
+
+.steps-grid h3{
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+}
+
+.steps-grid p{
+
+    color:var(--text);
+
+}
+
+/* ---------- CONTACT ---------- */
+
+.contact{
+
+    background:#fff;
+
+}
+
+.contact-form{
+
+    max-width:750px;
+
+    margin:0 auto 60px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+    width:100%;
+
+    padding:18px;
+
+    border:1px solid #d8d8d8;
+
+    border-radius:12px;
+
+    font-family:inherit;
+
+    font-size:1rem;
+
+    transition:var(--transition);
+
+    background:#fafafa;
+
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+    outline:none;
+
+    border-color:var(--accent);
+
+    background:#fff;
+
+    box-shadow:0 0 0 3px rgba(212,160,23,.15);
+
+}
+
+.contact-form textarea{
+
+    min-height:180px;
+
+    resize:vertical;
+
+}
+
+.contact-form button{
+
+    align-self:flex-start;
+
+}
+
+/* ---------- CTA ---------- */
+
+.cta{
+
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+
+    color:#fff;
+
+    text-align:center;
+
+}
+
+.cta h2{
+
+    font-size:2.4rem;
+
+    margin-bottom:20px;
+
+}
+
+.cta p{
+
+    max-width:700px;
+
+    margin:0 auto 35px;
+
+    opacity:.95;
+
+}
+
+.cta .btn-primary{
+
+    background:var(--accent);
+
+}
+
+.cta .btn-primary:hover{
+
+    background:#b7860f;
+
+}
+
+/* ---------- FOOTER ---------- */
+
+footer{
+
+    background:#0f223b;
+
+    color:#ddd;
+
+    padding:70px 0 25px;
+
+}
+
+.footer-content{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:40px;
+
+}
+
+.footer-column h3{
+
+    color:#fff;
+
+    margin-bottom:20px;
+
+}
+
+.footer-column p{
+
+    color:#cfcfcf;
+
+    margin-bottom:10px;
+
+}
+
+.footer-column ul li{
+
+    margin-bottom:12px;
+
+}
+
+.footer-column a{
+
+    transition:var(--transition);
+
+}
+
+.footer-column a:hover{
+
+    color:var(--accent);
+
+}
+
+.copyright{
+
+    margin-top:50px;
+
+    padding-top:25px;
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,255,255,.1);
+
+    color:#aaa;
+
+    font-size:.95rem;
+
+}
+
+/* ---------- RETOUR EN HAUT ---------- */
+
+#backToTop{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--accent);
+
+    color:#fff;
+
+    font-size:1.3rem;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    box-shadow:var(--shadow);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:var(--transition);
+
+    z-index:999;
+
+}
+
+#backToTop.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+#backToTop:hover{
+
+    transform:translateY(-5px);
+
+    background:#b7860f;
+
+}
+/* ==========================================
+   BATIXPERT SOLUTIONS
+   styles.css
+   Partie 4 - Responsive & Animations
+========================================== */
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.hero-text,
+.hero-image,
+.card,
+.service-card,
+.pricing article,
+.steps-grid div,
+.about-text,
+.contact-form{
+
+    animation:fadeUp .8s ease both;
+
+}
+
+/* ---------- IMAGES ---------- */
+
+.hero-image img{
+
+    transition:.4s;
+
+}
+
+.hero-image img:hover{
+
+    transform:scale(1.03);
+
+}
+
+/* ---------- SCROLLBAR ---------- */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--accent);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#ececec;
+
+}
+
+/* ---------- TABLETTE ---------- */
+
+@media (max-width:992px){
+
+.hero-content{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.hero-text h1{
+
+font-size:2.6rem;
+
+}
+
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width:768px){
+
+/* Header */
+
+.navbar{
+
+height:80px;
+
+}
+
+/* Burger */
+
+.burger{
+
+display:block;
+
+z-index:1001;
+
+}
+
+.menu{
+
+position:fixed;
+
+top:80px;
+
+left:-100%;
+
+width:100%;
+
+height:calc(100vh - 80px);
+
+background:#fff;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:flex-start;
+
+align-items:center;
+
+padding-top:40px;
+
+gap:30px;
+
+transition:.35s;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.menu.active{
+
+left:0;
+
+}
+
+/* Hero */
+
+.hero{
+
+padding:140px 0 70px;
+
+}
+
+.hero-text h1{
+
+font-size:2.2rem;
+
+}
+
+.hero-text p{
+
+font-size:1rem;
+
+}
+
+/* Sections */
+
+section{
+
+padding:80px 0;
+
+}
+
+.section-title h2{
+
+font-size:2rem;
+
+}
+
+/* Grilles */
+
+.presentation-grid,
+.services-grid,
+.pricing-grid,
+.steps-grid,
+.footer-content{
+
+grid-template-columns:1fr;
+
+}
+
+/* Boutons */
+
+.btn{
+
+display:block;
+
+width:100%;
+
+text-align:center;
+
+margin-bottom:15px;
+
+}
+
+.hero-buttons{
+
+display:block;
+
+}
+
+.contact-form button{
+
+width:100%;
+
+}
+
+}
+
+/* ---------- PETITS MOBILES ---------- */
+
+@media (max-width:480px){
+
+.logo span{
+
+font-size:1.35rem;
+
+}
+
+.logo small{
+
+font-size:.75rem;
+
+}
+
+.hero-text h1{
+
+font-size:1.8rem;
+
+}
+
+.page-hero h1{
+
+font-size:2rem;
+
+}
+
+.section-title h2{
+
+font-size:1.8rem;
+
+}
+
+.card,
+.service-card,
+.pricing article,
+.steps-grid div{
+
+padding:30px 20px;
+
+}
+
+}
+
+/* ---------- HOVER ---------- */
+
+.card:hover,
+.service-card:hover,
+.steps-grid div:hover,
+.pricing article:hover{
+
+box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+}
+
+/* ---------- SÉLECTION ---------- */
+
+::selection{
+
+background:var(--accent);
+
+color:#fff;
+
+}
+
+/* ---------- FIN ---------- */
