@@ -284,17 +284,13 @@ header{
 }
 
 .hero-content{
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    align-items:center;
-
-    gap:70px;
-
+    max-width:800px;
+    margin:0 auto;
+    text-align:center;
 }
-
+.hero-buttons{
+    justify-content:center;
+}
 .hero-text h1{
 
     font-size:3.2rem;
